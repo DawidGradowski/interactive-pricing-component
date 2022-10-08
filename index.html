@@ -3,37 +3,69 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
+  <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap" rel="stylesheet">
   
   <title>Frontend Mentor | Interactive pricing component</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
+  <!-- <style>
     .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  </style> -->
 </head>
 <body>
-
-  Simple, traffic-based pricing
-  Sign-up for our 30-day trial. No credit card required. 
-
-  Pageviews
-  $ /month
-
-  Monthly Billing
-  Yearly Billing 25% discount
-
-  Unlimited websites
-  100% data ownership
-  Email reports
-
-  Start my trial
+  <main>
+    <header>
+      <h1>Simple, traffic-based pricing</h1>
+      <p class="header-text">Sign-up for our 30-day trial.</p>
+      <p class="header-text"> No credit card required.</p>
+      <img src="images/pattern-circles.svg" alt="Site logo">
+    </header>
+    <section class="pricing-container">
+      <h2><span id="views-counter">100K</span> PAGEVIEWS</h2>
+      <input type="range" name="price-input" id="price-input" min="0" max="100" value="50">
+      <p class="price-container">
+        <span class="price-numb">$16.00</span>
+        /
+        <span class="price-time">month</span>
+      </p>
+      <div class="select-time">
+        <p class="time">Monthly Billing</p>
+        <div class="toggle">
+          <input type="checkbox" id="toggle-checkbox">
+          <label for="toggle-checkbox"></label>
+        </div>
+        <p class="time">Yearly Billing</p>
+        <p class="discount-numb">25% <span class="discount-text">discount</span></p>
+      </div>
+      <hr>
+      <div class="features-container">
+        <p class="feature">
+          <img src="images/icon-check.svg" alt="...">
+          Unlimited websites
+        </p>
+        <p class="feature">
+          <img src="images/icon-check.svg" alt="...">
+          100% data ownership
+        </p>
+        <p class="feature">
+          <img src="images/icon-check.svg" alt="...">
+          Email reports
+        </p>
+      </div>
+      <button id="start-trial-btn">
+        Start my trial
+      </button>
+    </section>
+  </main>
   
-  <div class="attribution">
+  <!-- <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
-  </div>
+  </div> -->
 </body>
 </html>
