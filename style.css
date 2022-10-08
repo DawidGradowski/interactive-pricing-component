@@ -84,8 +84,7 @@ header img{
     justify-content: space-around;
 }
 
-
-.pricing-container #price-input{
+.price-input-container{
     position: relative;
     -webkit-appearance: none;
     height: .75em;
@@ -95,8 +94,31 @@ header img{
     background-color: hsl(224, 65%, 95%);
 }
 
+.price-input-full{
+    background-color: hsl(174, 77%, 80%);
+    position: absolute;
+    width: 50%;
+    height: .75em;
+    border-radius: .375em;
+    top: 50%;
+    transform: translate(0, -50%);
+    left: 0;
+}
+
+.pricing-container #price-input{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-appearance: none;
+    height: .75em;
+    background-color: rgba(0, 0, 0, 0);
+    width: 100%;
+}
+
 .pricing-container #price-input::-webkit-slider-thumb{
     -webkit-appearance: none;
+    opacity: 1;
     height: 3em;
     border-radius: 50%;
     width: 3em;
