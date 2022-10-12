@@ -49,48 +49,13 @@ header img{
     z-index: -1;
 }
 
-.pricing-container{
-    background-color: hsl(0, 0%, 100%);
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    justify-content: space-around;
-    color: var(--greyish-blue);
-    min-height: 22.5rem;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-}
-
-.pricing-container h2{
-    font-size: 0.75em;
-}
-
-.price-container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.price-numb{
-    font-size: 2em;
-    font-weight: 800;
-    color: var(--dark-blue);
-    margin-right: 0.25em;
-}
-
-.select-time{
-    font-size: 13px;
-    display: flex;
-    justify-content: space-around;
-}
-
 .price-input-container{
     position: relative;
     -webkit-appearance: none;
     height: .75em;
     border-radius: .375em;
     width: 90%;
-    margin: 0 auto;
+    margin: 1rem auto 2rem;
     background-color: hsl(224, 65%, 95%);
 }
 
@@ -114,7 +79,23 @@ header img{
     height: .75em;
     background-color: rgba(0, 0, 0, 0);
     width: 100%;
+    cursor: pointer;
 }
+
+.pricing-container #price-input:active{
+    cursor: grab;
+}
+
+.pricing-container #price-input:active::-webkit-slider-thumb,
+.pricing-container #price-input:focus::-webkit-slider-thumb{
+    background-color: hsl(174, 68%, 40%);
+}
+
+.pricing-container #price-input:active::-moz-range-thumb,
+.pricing-container #price-input:focus::-moz-range-thumb{
+    background-color: hsl(174, 68%, 40%);
+}
+
 
 .pricing-container #price-input::-webkit-slider-thumb{
     -webkit-appearance: none;
@@ -126,6 +107,7 @@ header img{
     background-image: url(images/icon-slider.svg);
     background-repeat: no-repeat;
     background-position: center;
+    box-shadow: 0 1.25em 1.75em 0.125em  hsla(174, 86%, 45%, 0.568);
 }
 
 .pricing-container #price-input::-moz-range-thumb{
@@ -138,11 +120,12 @@ header img{
     background-image: url(images/icon-slider.svg);
     background-repeat: no-repeat;
     background-position: center;
+    box-shadow: 0 1.25em 1.75em 0.125em  hsla(174, 86%, 45%, 0.568);
 }
 
 
-
-.pricing-container #price-input::-moz-range-progress{
+/* I DECIDED TO MAKE THIS WITH JS */
+/* .pricing-container #price-input::-moz-range-progress{
     position: absolute;
     content: "";
     height: .75em;
@@ -150,7 +133,7 @@ header img{
     width: 100%;
     background-color: aqua;
     z-index: 1;
-}
+} */
 
 
 
@@ -177,12 +160,9 @@ header img{
     background-color: hsl(223, 50%, 87%);
 }
 
-#toggle-checkbox:focus + label::before{
-    background-color: hsl(223, 50%, 70%);
-}
-
+#toggle-checkbox:focus + label::before,
 #toggle-checkbox:hover + label::before{
-    background-color: hsl(223, 50%, 87%);
+    background-color: hsl(174, 86%, 45%);
 }
 
 #toggle-checkbox + label::after{
@@ -202,7 +182,89 @@ header img{
 }
 
 
+.pricing-container{
+    background-color: hsl(0, 0%, 100%);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-around;
+    color: var(--greyish-blue);
+    min-height: 22.5rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-radius: .5rem;
+}
+
+.pricing-container h2{
+    font-size: 0.75em;
+}
+
+.price-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.price-numb{
+    font-size: 2em;
+    font-weight: 800;
+    color: var(--dark-blue);
+    margin-right: 0.25em;
+}
+
+.select-time{
+    font-size: 13px;
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    transform: translate(1.25em);
+}
+
+.discount-numb{
+    background-color: hsl(14, 92%, 95%);
+    font-size: 0.875em;
+    font-weight: 800;
+    padding: 0.125em 0.625em;
+    border-radius: 0.875em;
+    color: hsl(15, 100%, 70%);
+}
 
 .discount-text{
     display: none;
+}
+
+.pricing-container hr{
+    border: 2px solid hsl(230, 100%, 99%);
+}
+
+.feature{
+    font-size: 0.875em;
+    width: 75%;
+    min-height: 2.125em;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.feature img{
+    min-height: 100%;
+}
+
+#start-trial-btn{
+    width: 60%;
+    min-height: 3em;
+    border: none;
+    border-radius: 1.75em;
+    font-size: 1.125em;
+    margin: 0 auto;
+    color: hsl(223, 50%, 87%);
+    background-color: hsl(227, 35%, 25%);
+}
+
+#start-trial-btn:focus,
+#start-trial-btn:hover{
+    cursor: pointer;
+    color: white;
 }
