@@ -1,66 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap" rel="stylesheet">
-  
+
   <title>Frontend Mentor | Interactive pricing component</title>
 
 </head>
+
 <body>
   <main>
     <header>
       <h1>Simple, traffic-based pricing</h1>
-      <p class="header-text">Sign-up for our 30-day trial.</p>
-      <p class="header-text"> No credit card required.</p>
+      <div class="header-text">
+        <p>Sign-up for our 30-day trial.</p>
+        <p> No credit card required.</p>
+      </div>
       <img src="images/pattern-circles.svg" alt="Site logo">
     </header>
     <section class="pricing-container">
-      <h2><span id="views-counter">100K</span> PAGEVIEWS</h2>
-      <div class="price-input-container">
-        <div class="price-input-full"></div>
-        <input type="range" name="price-input" id="price-input" min="1" max="5" value="3">
-      </div>
-      <p class="price-container">
-        <span class="price-numb">$16.00</span>
-        /
-        <span class="price-time">month</span>
-      </p>
-      <div class="select-time">
-        <p class="time">Monthly Billing</p>
-        <div class="toggle">
-          <input type="checkbox" id="toggle-checkbox">
-          <label for="toggle-checkbox"></label>
+      <div class="everything-with-price">
+        <h2><span id="views-counter">100K</span> PAGEVIEWS</h2>
+        <div class="price-input-container">
+          <div class="price-input-full"></div>
+          <input type="range" name="price-input" id="price-input" min="1" max="5" value="3">
         </div>
-        <p class="time">Yearly Billing</p>
-        <p class="discount-numb">-25%<span class="discount-text"> discount</span></p>
+        <p class="price-container">
+          <span class="price-numb">$16.00</span>
+          /
+          <span class="price-time">month</span>
+        </p>
+        <div class="select-time">
+          <p class="time">Monthly Billing</p>
+          <div class="toggle">
+            <input type="checkbox" id="toggle-checkbox">
+            <label for="toggle-checkbox"></label>
+          </div>
+          <p class="time">Yearly Billing</p>
+          <p class="discount-numb">-25%<span class="discount-text"> discount</span></p>
+        </div>
       </div>
       <hr>
-      <div class="features-container">
-        <p class="feature">
-          <img src="images/icon-check.svg" alt="...">
-          Unlimited websites
-        </p>
-        <p class="feature">
-          <img src="images/icon-check.svg" alt="...">
-          100% data ownership
-        </p>
-        <p class="feature">
-          <img src="images/icon-check.svg" alt="...">
-          Email reports
-        </p>
+      <div class="everything-without-price">
+        <ul class="features-container">
+          <li class="feature">
+            Unlimited websites
+          </li>
+          <li class="feature">
+            100% data ownership
+          </li>
+          <li class="feature">
+            Email reports
+          </li>
+        </ul>
+        <button id="start-trial-btn">
+          Start my trial
+        </button>
       </div>
-      <button id="start-trial-btn">
-        Start my trial
-      </button>
     </section>
   </main>
   <script src="script.js"></script>
-  
+
 </body>
+
 </html>

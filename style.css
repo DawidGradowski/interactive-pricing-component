@@ -26,6 +26,7 @@ main{
 header{
     text-align: center;
     position: relative;
+    height: 25vh;
     min-height: 10rem;
     display: flex;
     flex-direction: column;
@@ -55,7 +56,7 @@ header img{
     height: .75em;
     border-radius: .375em;
     width: 90%;
-    margin: 1rem auto 2rem;
+    margin: 1rem auto;
     background-color: hsl(224, 65%, 95%);
 }
 
@@ -86,13 +87,11 @@ header img{
     cursor: grab;
 }
 
-.pricing-container #price-input:active::-webkit-slider-thumb,
-.pricing-container #price-input:focus::-webkit-slider-thumb{
+.pricing-container #price-input:active::-webkit-slider-thumb{
     background-color: hsl(174, 68%, 40%);
 }
 
-.pricing-container #price-input:active::-moz-range-thumb,
-.pricing-container #price-input:focus::-moz-range-thumb{
+.pricing-container #price-input:active::-moz-range-thumb{
     background-color: hsl(174, 68%, 40%);
 }
 
@@ -160,8 +159,11 @@ header img{
     background-color: hsl(223, 50%, 87%);
 }
 
-#toggle-checkbox:focus + label::before,
 #toggle-checkbox:hover + label::before{
+    background-color: hsl(174, 86%, 45%);
+}
+
+#toggle-checkbox:focus + label::before{
     background-color: hsl(174, 86%, 45%);
 }
 
@@ -186,14 +188,29 @@ header img{
     background-color: hsl(0, 0%, 100%);
     display: flex;
     flex-direction: column;
+    gap: 2em;
     text-align: center;
     justify-content: space-around;
     color: var(--greyish-blue);
     min-height: 22.5rem;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    max-width: 690px;
+    margin: 0 auto;
+    padding: 2rem 0;
+    box-sizing: border-box;
     border-radius: .5rem;
+    box-shadow: 0 0.25em 0.5em -0.5em rgba(114, 117, 153, 0.6);;
 }
+
+.everything-with-price,
+.everything-without-price{
+    display: flex;
+    gap: 2em;
+    flex-direction: column;
+    justify-content: space-around;
+    color: var(--greyish-blue);
+    width: 100%;
+}
+
 
 .pricing-container h2{
     font-size: 0.75em;
@@ -237,15 +254,17 @@ header img{
     border: 2px solid hsl(230, 100%, 99%);
 }
 
+.features-container{
+    list-style-type: disc;
+    list-style-image: url('images/icon-check.svg');
+    list-style-position: inside;
+}
+
 .feature{
     font-size: 0.875em;
     width: 75%;
     min-height: 2.125em;
     margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
 }
 
 .feature img{
@@ -267,4 +286,94 @@ header img{
 #start-trial-btn:hover{
     cursor: pointer;
     color: white;
+}
+
+@media only screen and (min-width: 768px) {
+
+    header h1{
+        font-size: 2em;
+    }
+
+    .header-text{
+        margin-top: .25em;
+        display: flex;
+        justify-content: center;
+        white-space: pre;
+        font-size: 1em;
+    }
+
+    .everything-with-price{
+        width: 80%;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: auto;
+    }
+    h2{
+        order: -2;
+        grid-column: 1;
+        grid-row: 1;
+        text-align: left;
+        display: flex;
+        align-items: center;
+        white-space: pre;
+        font-size: 1em!important;
+        letter-spacing: .125em;
+    }
+    .price-container{
+        order: -1;
+        grid-column: 2;
+        grid-row: 1;
+        text-align: right;
+        display: flex;
+        justify-content: flex-end;
+        font-size: 1.375em;
+    }
+    .price-input-container{
+        grid-row: 2;
+        grid-column: 1/3;
+        width: 100%;
+    }
+    .select-time{
+        grid-row: 3;
+        grid-column: 1/3;
+        width: 100%;
+        transform: translateX(3.5em);
+    }
+
+    .discount-text{
+        display: inline-block;
+        white-space: pre;
+    }
+
+
+    .everything-without-price{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between!important;
+        width: 87%;
+        margin: 0 auto;
+    }
+
+    .everything-without-price ul{
+        width: 50%;
+        transform: translateX(-2em);
+        text-align: left;
+    }
+
+    #start-trial-btn{
+        height: 3.5em;
+        font-size: 1em;
+        width: 40%;
+        padding: 0;
+        margin: 0;
+    }
+
+}
+
+@media only screen and (min-width: 1440px) {
+    body{
+        background-size: 100%;
+    }
 }
